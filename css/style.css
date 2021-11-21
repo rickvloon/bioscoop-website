@@ -1,0 +1,672 @@
+/* table of contents
+
+1. global styles
+
+2. typography
+
+3. layout
+   3.1 grid
+   3.2 nav
+   3.3 banner
+
+4. pages
+   4.1 homepage
+   4.2 moviepage
+   4.3 actorpage
+   4.4 detailpage
+   4.5 aboutpage
+
+5. components
+   5.1 buttons
+   5.2 forms
+
+6. responsive (voor een klein deel)
+
+*/
+
+/* =============
+   global styles
+   ============= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    transition: 0.3s ease-in;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #000000;
+}
+
+/* =============
+   typography
+   ============= */
+
+h1 {
+    font-size: 80px;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+h5 {
+    font-weight: 400;
+}
+
+p {
+    font-size: 14px;
+}
+
+.red-subtitle {
+    color: #f9002b;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* =============
+   layout
+   ============= */
+
+   /* grid */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.homepage {
+    grid-template-rows: 50px 70vh auto auto auto;;
+    grid-template-areas:
+    'nav nav nav nav nav nav nav nav nav nav nav nav nav'
+    'banner banner banner banner banner banner banner banner banner banner banner banner banner'
+    'bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs'
+    'main main main main main main main main main main main main main'
+    'footer footer footer footer footer footer footer footer footer footer footer footer footer';
+}
+
+.moviepage {
+    grid-template-rows: 50px auto auto 1000px 850px auto;
+    grid-template-areas: 
+    'nav nav nav nav nav nav nav nav nav nav nav nav nav'
+    'banner banner banner banner banner banner banner banner banner  banner banner banner banner'
+    'bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs'
+    'aside aside aside main main main main main main main main main main'
+    'review-form review-form review-form review-comments review-comments review-comments review-comments review-comments review-comments review-comments review-comments review-comments review-comments'
+    'footer footer footer footer footer footer footer footer footer footer footer footer footer';
+}
+
+.actorpage {
+    grid-template-rows: 50px auto auto 1000px auto;
+    grid-template-areas: 
+    'nav nav nav nav nav nav nav nav nav nav nav nav nav'
+    'banner banner banner banner banner banner banner banner banner banner banner banner banner'
+    'bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs'
+    'main main main main main main main aside aside aside aside aside aside'
+    'footer footer footer footer footer footer footer footer footer footer footer footer footer';
+}
+
+.movieform {
+    grid-template-rows: 50px auto auto 750px auto;
+    grid-template-areas: 
+    'nav nav nav nav nav nav nav nav nav nav nav nav nav'
+    'banner banner banner banner banner banner banner banner banner banner banner banner banner'
+    'bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs bread-crumbs'
+    'aside aside aside main main main main main main main main main main'
+    'footer footer footer footer footer footer footer footer footer footer footer footer footer';
+}
+
+   /* nav */
+
+nav {
+    background-color: #0c0c0c;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 50px 0 100px;
+    justify-content: space-between;
+    grid-area: nav;
+}
+
+nav li{
+    display: inline;
+    padding-right: 10px;
+}
+
+nav a {
+    color: #a7a7a7;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover, #active {
+    color: #fff;
+}
+
+#active {
+    font-weight: bold;
+}
+
+nav i {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav #search-container {
+    display: inline;
+    position: relative;
+}
+
+nav #search-container label {
+    position: absolute;
+    right: 15px;
+}
+
+nav input[type="text"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid;
+    outline: 0;
+    padding-bottom: 3px;
+}
+
+nav input[type="text"]::placeholder {
+    color: #a7a7a7;
+}
+
+    /* banner */
+      
+#slideshow div { 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 100%;
+}
+
+.banner {
+    position: relative;
+    grid-area: banner;
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(180deg,rgba(0,0,0,0) 0%,#000000 100%);
+}
+
+.banner img {
+    object-fit: cover;
+    height: 70vh;
+    width: 100%;
+    z-index: -1;
+}
+
+.banner-text {
+    top: 15%;
+    left: 7.5%;
+    position: absolute;
+    z-index: 1;
+}
+
+.banner .red-subtitle {
+    margin-top: 10px;
+}
+
+
+    /* aside */
+
+aside {
+    overflow-y: scroll;
+}
+
+aside {
+    text-align: center;
+    grid-area: aside;
+}
+    
+    /* main */
+
+main {
+    grid-area: main;
+}
+
+/* bread crumbs */
+
+.bread-crumbs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    grid-area: bread-crumbs;
+    padding-bottom: 50px;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 75px;
+    height: 300px;
+    background: linear-gradient(180deg,#000000 0%,rgba(0,0,0,0) 50%), url("https://ali.sandbox.etdevs.com/divi/wp-content/uploads/sites/2/2019/09/theater-01.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 10%;
+    grid-area: footer;
+}
+
+.footer-info {
+    width: 20%;
+}
+
+.footer-info * {
+    margin-top: 5px;
+    display: block;
+}
+
+.footer-title {
+    font-weight: 100;
+    padding-bottom: 5px;
+}
+
+.footer-header {
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* =============
+   pages
+   ============= */
+
+   /* homepage */
+
+.movies-section {
+    width: 100%;
+    padding: 20px 100px;
+}
+
+.movies-header h1 {
+    margin-top: 3px;
+}
+
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    grid-gap: 70px;
+    margin-top: 30px;
+}
+
+.movie {
+    max-width: 350px;
+    max-height: 600px;
+    margin: 0px auto;
+}
+
+.movie-poster {
+    width: 100%;
+    height: 500px;
+}
+
+.movie img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.movie h3 {
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+.movie p {
+    color: #a7a7a7;
+    margin-bottom: 10px;
+}
+
+.movie button {
+    padding: 10px;
+}
+
+    /* moviepage */
+
+.rating-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.rating-container i {
+    color: #f9002b;
+    font-size: 28px;
+    padding-right: 5px;
+}
+
+.review-form {
+    grid-area: review-form;
+    padding: 75px 500px 0px 100px;
+}
+
+.review-section {
+    grid-area: review-comments;
+    padding: 75px;
+}
+
+.review-comments {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.review {
+    max-width: 400px;
+}
+
+.review h4 {
+    margin: 10px 0px;
+}
+
+.review i {
+    font-size: 15px;
+}
+
+    /* actorpage */
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    text-align: left;
+    padding: 5px 0;
+}
+
+    /* detailpages */
+
+.details-info {
+    padding: 0px 100px;
+}
+
+.details-description {
+    margin: 25px 0;
+}
+
+.details-personal div {
+    margin-top: 10px;
+}
+
+.trailer-wrapper {
+    margin-top: 30px;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-item {
+    margin-top: 20px;
+}
+
+/* about page */
+
+#personal-portret {
+    margin-top: 20px;
+}
+
+/* =============
+   components
+   ============= */
+
+   /* buttons */
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+
+.btn-filled {
+    font-size: 14px;
+    background-color: #f9002b;
+    padding: 20px 30px;
+    margin-top: 40px;
+} 
+
+.btn-filled:hover {
+    background-color: #97021b;
+}
+
+.btn-outlined {
+    background-color: transparent;
+    border: 1px solid #f9002b;
+    padding: 20px;
+    margin-right: 50px;
+}
+
+.btn-outlined:hover {
+    background-color:#f9002b;
+}
+
+.btn-outlined:disabled {
+    cursor: not-allowed;
+}
+
+    /* forms */
+
+.movieform-wrapper {
+    padding-left: 100px;
+}
+
+form {
+    display: flex;
+}
+
+form input {
+    color: #000000;
+    display: block;
+    padding: 7px 2px;
+    width: 300px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 8px 0;
+}
+
+textarea {
+    display: block;
+    color: #000000;
+    padding: 7px 2px;
+}
+
+fieldset {
+    margin-top: 10px;
+    border: 0;
+    padding-right: 50px;
+}
+
+fieldset .btn-filled {
+    margin: 0;
+}
+
+
+.fieldset-title {
+    margin-bottom: 10px;
+}
+
+fieldset .btn-filled {
+    margin: 0;
+}
+
+.input-container {
+    margin-top: 10px;
+}
+
+/* =============
+   responsive
+   ============= */
+
+@media (max-width: 1650px) {
+    .movies-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .movies-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 50px;
+        font-weight: 900;
+    }
+
+    h2 {
+        font-size: 35px;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .btn-filled {
+        padding: 15 20px;
+    }
+
+    .btn-outlined {
+        padding: 15px 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    /* general */
+    nav {
+        padding: 0 25px 0 50px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 650px;
+    }
+
+    .footer-info {
+        text-align: center;
+    }
+
+    /* home page */
+
+    .main-buttons-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin: 25px 0;
+    }
+
+    .bread-crumbs .btn-outlined {
+        margin: 20px;
+    }
+
+    .movies-section {
+        padding: 0;
+    }
+    
+    .movies-container {
+        grid-template-columns: 1fr;
+    }
+
+    .movies-header {
+        text-align: center;
+    }
+
+    /* movie page and actor page */
+
+    .moviepage, .actorpage {
+        grid-template-rows: 50px auto auto auto auto;
+        grid-template-areas: 
+        'nav nav nav nav nav nav nav nav nav nav nav nav nav'
+        'banner banner banner banner banner banner banner banner banner banner banner banner banner'
+        'aside aside aside aside aside aside aside aside aside aside aside aside aside'
+        'main main main main main main main main main main main main main'
+        'footer footer footer footer footer footer footer footer footer footer footer footer footer';
+    }
+
+    aside {
+        padding: 0 25px 50px;
+        overflow: auto;
+    }
+
+    .list-container {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .list-item {
+        margin-right: 25px;
+    }
+
+    .details-info {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    .btn-filled {
+        padding: 15px 10px;
+    }
+
+    nav {
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/e7a611bb84.js" crossorigin="anonymous"></script>
+    <title>Grid Website - Rick van Loon</title>
+</head>
+<body>
+    <div class="wrapper homepage">
+        <nav>
+            <ul>
+                <li><a href="index.html" id="active">Home</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="movieform.html">Add new movie</a></li>
+            </ul>
+            <ul>
+                <li id="search-container">
+                    <input type="text"name="search"placeholder="Search">
+                    <label for="search">
+                        <i class="fas fa-search"></i>
+                    </label>
+                </li>
+                <li><a><i class="fas fa-bell"></i></a></li>
+                <li><a><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+
+        <header class="banner" id="slideshow">
+            <div class="banner-wrapper">
+                <img src="https://ali.sandbox.etdevs.com/divi/wp-content/uploads/sites/2/2019/09/movie-02.jpg" alt="Banner image">
+            </div>
+            <div class="banner-wrapper">
+                <img src="https://www.elegantthemes.com/layouts/wp-content/uploads/2019/10/bar-24.jpg" alt="Banner image">
+            </div>
+            <div class="banner-wrapper">
+                <img src="https://ali.sandbox.etdevs.com/divi/wp-content/uploads/sites/2/2019/09/movie-05.jpg" alt="Banner image">
+            </div>
+            <section class="banner-text">
+                <h1>WELCOME TO THE <br> MOVIE LIBRARY</h1>
+                <button class="btn btn-filled">Sign up</button>
+            </section>
+        </header>
+
+        <div class="bread-crumbs">
+            <button class="btn btn-outlined">Streaming</button>
+            <button class="btn btn-outlined">Films</button>
+            <button class="btn btn-outlined">TV Series</button>
+        </div>
+
+        <main>
+            <section class="movies-section">
+                <div class="movies-header">
+                    <h3 class="red-subtitle">Featured</h3>
+                    <h1>Upcoming</h1>
+                </div>
+                <div class="movies-container">
+                    <article class="movie">
+                        <div class="movie-poster">
+                            <img src="https://www.themoviedb.org/t/p/w1280/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg" alt="Venom movie poster">
+                        </div>
+                        <h3 class="movie-title">Venom</h3>
+                        <p>2hr 25min</p>
+                        <p>Released 15 oktober 2020</p>
+                        <a href="moviedetails1.html">
+                            <button class="btn btn-outlined">Details</button>
+                        </a>
+                    </article>
+                    <article class="movie">
+                        <div class="movie-poster">
+                            <img src="https://www.themoviedb.org/t/p/w1280/s1FhMAr91WL8D5DeHOcuBELtiHJ.jpg" alt="Dune movie poster">
+                        </div>
+                        <h3 class="movie-title">Dune</h3>
+                        <p>2hr 35min</p>
+                        <p>Released 16 september 2021</p>
+                        <a href="moviedetails2.html">
+                            <button class="btn btn-outlined">Details</button>
+                        </a>
+                    </article>
+                    <article class="movie">
+                        <div class="movie-poster">
+                            <img src="https://www.themoviedb.org/t/p/w1280/xeItgLK9qcafxbd8kYgv7XnMEog.jpg" alt="Shang Chi movie poster">
+                        </div>
+                        <h3 class="movie-title">Shang Chi</h3>
+                        <p>2hr 15min</p>
+                        <p>Released 1 september 2021</p>
+                        <a><button class="btn btn-outlined" disabled>Details</button></a>
+                    </article>
+                    <article class="movie">
+                        <div class="movie-poster">
+                            <img src="https://www.themoviedb.org/t/p/w1280/5AaKulwpUtkscAokKWtLenGTfVS.jpg" alt="Gunpowder milkshake movie poster">
+                        </div>
+                        <h3 class="movie-title">Gunpowder milkshake</h3>
+                        <p>1hr 54min</p>
+                        <p>Released 14 juli 2021</p>
+                        <a><button class="btn btn-outlined" disabled>Details</button></a>
+                    </article>
+                    <article class="movie">
+                        <div class="movie-poster">
+                            <img src="https://www.themoviedb.org/t/p/w1280/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg" alt="Gozilla vs. Kong movie poster">
+                        </div>
+                        <h3 class="movie-title">Godzilla vs. Kong</h3>
+                        <p>2hr 23min</p>
+                        <p>Released 26 maart 2021</p>
+                        <a><button class="btn btn-outlined" disabled>Details</button></a>
+                    </article>
+                    <article class="movie">
+                        <div class="movie-poster">
+                            <img src="https://www.themoviedb.org/t/p/w1280/pwDvkDyaHEU9V7cApQhbcSJMG1w.jpg" alt="Cherry movie poster">
+                        </div>
+                        <h3 class="movie-title">Cherry</h3>
+                        <p>2hr 21min</p>
+                        <p>Released 26 februari 2021</p>
+                        <a><button class="btn btn-outlined" disabled>Details</button></a>
+                    </article>
+                    <article class="movie">
+                        <div class="movie-poster">
+                            <img src="https://www.themoviedb.org/t/p/w1280/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg" alt="Black Widow movie poster">
+                        </div>
+                        <h3 class="movie-title">Black Widow</h3>
+                        <p>2hr 13min</p>
+                        <p>Released 7 juli 2020</p>
+                        <a><button class="btn btn-outlined" disabled>Details</button></a>
+                    </article>
+                    <article class="movie">
+                        <div class="movie-poster">
+                            <img src="https://www.themoviedb.org/t/p/w1280/537klaNsLjynwopYTrqz6ro03l4.jpg" alt="The ice road movie poster">
+                        </div>
+                        <h3 class="movie-title">The Ice Road</h3>
+                        <p>2hr 0min</p>
+                        <p>Released 1 oktober 2021</p>
+                        <a><button class="btn btn-outlined" disabled>Details</button></a>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <h2 id="footer-title">
+                    Movie
+                    <strong>Library</strong>
+                </h2>
+                <h3 class="red-subtitle">Rick van Loon</h3>
+            </div>
+            <div class="footer-info">
+                <h3 class="footer-header">About Me</h3>
+                <a href="about.html">More informate about me</a>
+            </div>
+            <div class="footer-info">
+                <h3 class="footer-header">Movies</h3>
+                <a href="moviedetails1.html">Venom 2</a>
+                <a href="moviedetails2.html">Dune</a>
+            </div>
+            <div class="footer-info">
+                <h3 class="footer-header">Actors</h3>
+                <a href="actordetails1.html">Tom Hardy</a>
+                <a href="actordetails2.html">Timothée Chalamet</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function() {
+          $('#slideshow > div:first')
+          .fadeOut(1000)
+          .next()
+          .fadeIn(1000)
+          .end()
+          .appendTo('#slideshow');
+        }, 3000);
+      })
+    </script>
+</body>
+</html>

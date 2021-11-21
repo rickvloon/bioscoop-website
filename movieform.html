@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/e7a611bb84.js" crossorigin="anonymous"></script>
+    <title>Movie Form</title>
+</head>
+<body>
+    <div class="wrapper movieform">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="movieform.html" id="active">Add new movie</a></li>
+            </ul>
+            <ul>
+                <li id="search-container">
+                    <input type="text"name="search"placeholder="Search">
+                    <label for="search">
+                        <i class="fas fa-search"></i>
+                    </label>
+                </li>
+                <li><a><i class="fas fa-bell"></i></a></li>
+                <li><a><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+
+        <header class="banner">
+            <img src="https://ali.sandbox.etdevs.com/divi/wp-content/uploads/sites/2/2019/09/movie-05.jpg" alt="Banner image">
+            <div class="banner-text">
+                <h1>ADD NEW MOVIE</h1>
+                <h3 class="red-subtitle">movie form</h3>
+            </div>
+        </header>
+
+        <div class="bread-crumbs">
+            <a href="home.html">
+                <button class="btn btn-outlined">Home</button>
+            </a>
+            <a href="about.html">
+                <button class="btn btn-outlined">About</button>
+            </a>
+            <a href="movieform.html">
+                <button class="btn btn-outlined">Add new movie</button>
+            </a>
+        </div>
+
+        <aside>
+            <h3 class="red-subtitle">Recently added</h3>
+            <section class="list-container">
+                <article class="list-item">
+                    <a href="moviedetails1.html">
+                        <img src="https://www.themoviedb.org/t/p/w1280/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg" alt="Venom poster" width="300px">
+                        <h4>Venom: Let there be carnage</h4>
+                    </a>
+                </article>
+                <article class="list-item">
+                    <img src="https://www.themoviedb.org/t/p/w1280/bGZn5RVzMMXju4ev7xbl1aLdXqq.jpg" alt="Peaky blinders poster" width="300px">
+                    <h4>Peaky Blinders</h4>
+                </article>
+                <article class="list-item">
+                    <img src="https://www.themoviedb.org/t/p/w1280/75gDv38UgRtAukSxNXcjatyQmEa.jpg" alt="Capone poster" width="300px">
+                    <h4>Capone</h4>
+                </article>
+                <article class="list-item">
+                    <img src="https://www.themoviedb.org/t/p/w1280/4shf5Alq4KWCKqrAAQe0JGJHYp5.jpg" alt="Reid Scott picture" width="300px">
+                    <h4>Legend</h4>
+                </article>
+            </section>
+        </aside>
+
+        <main>
+            <section class="movieform-wrapper">
+                <h3 class="red-subtitle">Movie Form</h3>
+                <form action="#" method="post">
+                    <fieldset>
+                        <h4 class="fieldset-title">Movie Details</h4>
+                        <div class="input-container">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" placeholder="Dune" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="director">Director</label>
+                            <input type="text" name="director" id="director" placeholder="Dennis Villeneuve" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="release-date">Release date</label>
+                            <input type="date" name="release-date" id="release-date" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" cols="100%" rows="15" placeholder="Description" required></textarea>
+                        </div>
+                        <div class="input-container">
+                            <label for="rating">Rating (0/5)</label>
+                            <input type="number" name="rating" id="rating" min="0" max="5" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="movie-image">Image</label>
+                            <input type="file" name="movie-image" id="movie-image" required>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <h4 class="fieldset-title">Actor Details</h4>
+                        <div class="input-container">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Tom Hardy" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="actor-image">Image</label>
+                            <input type="file" name="actor-image" id="actor-image" required>
+                        </div>
+                        <button type="submit" class="btn btn-filled" disabled>Submit</button>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-info">
+                <h2 id="footer-title">
+                    Movie
+                    <strong>Library</strong>
+                </h2>
+                <h3 class="red-subtitle">Rick van Loon</h3>
+            </div>
+            <div class="footer-info">
+                <h3 class="footer-header">About Me</h3>
+                <a href="about.html">More informate about me</a>
+            </div>
+            <div class="footer-info">
+                <h3 class="footer-header">Movies</h3>
+                <a href="moviedetails1.html">Venom 2</a>
+                <a href="moviedetails2.html">Dune</a>
+            </div>
+            <div class="footer-info">
+                <h3 class="footer-header">Actors</h3>
+                <a href="actordetails1.html">Tom Hardy</a>
+                <a href="actordetails2.html">Timothée Chalamet</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
